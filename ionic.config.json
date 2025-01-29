@@ -1,0 +1,7 @@
+{
+  "name": "Find My Yard",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
