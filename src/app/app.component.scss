@@ -23,7 +23,7 @@ ion-menu.md ion-note {
 }
 
 ion-menu.md ion-list#inbox-list {
-  border-bottom: 1px solid var(--ion-background-color-step-150, #d7d8da);
+  // border-bottom: 1px solid var(--ion-background-color-step-150, #d7d8da);
 }
 
 ion-menu.md ion-list#inbox-list ion-list-header {
@@ -116,4 +116,16 @@ ion-note {
 
 ion-item.selected {
   --color: var(--ion-color-primary);
+}
+
+.sidenav_logo {
+  width: 10rem;
+  height: auto;
+}
+
+.sidenav_title {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: "Anton", serif;
 }

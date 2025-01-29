@@ -1,10 +1,13 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
+    <ion-menu menuId="m1" contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header>Inbox</ion-list-header>
-          <ion-note>hi&#64;ionicframework.com</ion-note>
+          <!-- <ion-img src="../assets/images/app_logo-3.png" class="sidenav_logo"></ion-img> -->
+          <ion-list-header>
+            <ion-text class="sidenav_title" color="primary">Find My Yard</ion-text>
+          </ion-list-header>
+          <ion-note class="primary_text-color">your perfect home, just a tap away</ion-note>
 
           @for (p of appPages; track p; let i = $index) {
             <ion-menu-toggle auto-hide="false">
@@ -16,7 +19,7 @@
           }
         </ion-list>
 
-        <ion-list id="labels-list">
+        <!-- <ion-list id="labels-list">
           <ion-list-header>Labels</ion-list-header>
 
           @for (label of labels; track label) {
@@ -25,9 +28,38 @@
               <ion-label>{{ label }}</ion-label>
             </ion-item>
           }
-        </ion-list>
+        </ion-list> -->
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>
+
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        @for (fIcon of footerToolbar; track $index; ) {
+          <ion-tab-button [tab]="fIcon.url">
+            <ion-label>{{fIcon.title}}</ion-label>
+            <ion-icon [name]="fIcon.icon + '-outline'"></ion-icon>
+          </ion-tab-button>
+        }
+        <!-- <ion-tab-button tab="find-a-place">
+          <ion-label>Find</ion-label>
+          <ion-icon name="search-outline"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button tab="offers">
+          <ion-label>Offers</ion-label>
+          <ion-icon name="card-outline"></ion-icon>
+        </ion-tab-button> -->
+      </ion-tab-bar>
+    </ion-tabs>
   </ion-split-pane>
 </ion-app>
+
+<!-- 
+<ion-tab-bar slot="bottom">
+  @for (fIcon of footerToolbar; track $index; let i = $index) {
+  <ion-tab-button [tab]="fIcon.url">
+    <ion-label>{{fIcon.title}}</ion-label>
+    <ion-icon aria-hidden="true" slot="start" [ios]="fIcon.icon + '-outline'" [md]="fIcon.icon + '-sharp'"></ion-icon>
+  </ion-tab-button>
+  }
+</ion-tab-bar> -->

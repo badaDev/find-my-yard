@@ -34,4 +34,30 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+// @import '@ionic/angular/css/palettes/dark.system.css';
+
+
+
+
+.ion-invalid.ion-touched ion-label {
+    color: var(--ion-color-danger, #FF0000);
+}
+
+.error {
+    color: var(--ion-color-danger, #FF0000);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+ion-title {
+    text-transform: capitalize;
+}
+
+* {
+    font-family: "Roboto Condensed", serif;
+}
+
+.primary_text-color {
+    color: #757575;
+}
+

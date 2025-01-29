@@ -1,0 +1,68 @@
+.fullscreen-content {
+    // --background: transparent; // Remove default background
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+// .background-image {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+// }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.logo {
+    height: 15rem;
+    width: 15rem;
+}
+
+.app_title {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: "Anton", serif;
+    font-style: normal;
+    color: var(--ion-color-primary);
+}
+
+.app_subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 15rem;
+    line-height: 1.7rem;
+    color: var(--ion-color-primary);
+}
+
+.action_btn {
+    width: 100%;
+    margin: 10px auto;
+    padding: 1rem auto;
+    font-size: 1.2rem;
+    border-radius: 50px !important;
+}
+
+.terms_and-privacy {
+    color: var(--ion-color-secondary-tint);
+}
+
+.footer_text {
+    margin-top: 1.5rem;
+}

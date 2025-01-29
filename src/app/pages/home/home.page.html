@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-segment value="featured" (ionChange)="filterUpdate($event)">
+    <ion-segment-button value="featured" content-id="featured">Featured</ion-segment-button>
+    <ion-segment-button value="all"content-id="all">All</ion-segment-button>
+  </ion-segment>
+  <ion-segment-view>
+    <ion-segment-content id="featured">
+      <ion-grid>
+        @for (listing of featuredListings; track $index; let i = $index) {
+        <ion-row>
+          <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+            <ion-card>
+              <ion-card-header>
+                <ion-card-title>{{ listing.title }}</ion-card-title>
+                <ion-card-subtitle>{{ listing.price | currency:'NGN':'symbol':'1.0-0' }}</ion-card-subtitle>
+              </ion-card-header>
+              <ion-img [src]="listing.imgUrl[0]"></ion-img>
+              <ion-card-content>
+                <ion-text color="danger">{{ listing.description }}</ion-text>
+              </ion-card-content>
+              <div class="ion-text-right">
+                <ion-button fill="clear" color="primary" [routerLink]="[]">
+                  View
+                </ion-button>
+              </div>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        }
+      </ion-grid>
+    </ion-segment-content>
+    <ion-segment-content id="all">Second</ion-segment-content>
+  </ion-segment-view>
+</ion-content>
