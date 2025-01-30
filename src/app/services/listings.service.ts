@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Listing } from '../models/listing';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ListingsService {
+  apartmentIdSubject = new BehaviorSubject<string>('');
+  apartmentId$ = this.apartmentIdSubject.asObservable();
 
   private _featuredListings: Listing[] = [
     {
@@ -35,7 +38,7 @@ export class ListingsService {
     },
     {
       id: "featured-789",
-      title: "5 Bedroom Apartment",
+      title: "6 Bedroom Apartment",
       location: "Ikeja GRA",
       description: "Royalty treatment",
       imgUrl: [
@@ -91,11 +94,19 @@ export class ListingsService {
 
   constructor() { }
 
-  getSingleFeaturedListing(id: any) {
-    return {...this._featuredListings.find(l => l.id === id)};
+  getSingleFeaturedListing(id: any): Listing {
+    return {...this._featuredListings.find(l => l.id === id)} as Listing;
   }
 
   getSingleListing(id: any) {
     return {...this._allListings.find(l => l.id === id)};
+  }
+
+  setApartmentId(id: string) {
+    this.apartmentIdSubject.next(id);
+  }
+
+  getApartmentId(): string {
+    return this.apartmentIdSubject.getValue();
   }
 }
